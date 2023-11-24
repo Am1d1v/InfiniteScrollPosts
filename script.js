@@ -56,6 +56,30 @@ function showLoading(){
     }, 1000);
 }
 
+// Filter Posts by input
+function filterPosts(event){
+   // Input value
+   const term = event.target.value.toUpperCase();
+
+   // Get all posts
+   const posts = document.querySelectorAll('.post');
+
+   posts.forEach((post) => {
+    // Posts title anad body
+    const title = post.querySelector('.post-title').innerText.toUpperCase();
+    const body = post.querySelector('.post-body').innerText.toUpperCase();
+
+    // Show post if title or body of post if find 
+    if(title.indexOf(term) > -1 || body.indexOf(term) > -1){
+        post.style.display = 'flex';
+    } else {
+        post.style.display = 'none';
+    }
+
+   })
+}
+
+// Scroll Event Listener
 window.addEventListener('scroll', () => {
     // Document destructuring
     const {scrollTop, scrollHeight, clientHeight} = document.documentElement;
@@ -68,7 +92,7 @@ window.addEventListener('scroll', () => {
 });
 
 
-
-
+// Input Filter
+filter.addEventListener('input', filterPosts);
 
 
