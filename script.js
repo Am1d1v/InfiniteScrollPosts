@@ -5,7 +5,7 @@ const loading = document.querySelector('.loader');
 const filter = document.querySelector('#filter');
 
 // Max number of loading posts
-let limit = 3;
+let limit = 5;
 
 // Initial Page Value
 let page = 1;
@@ -37,8 +37,35 @@ async function showPosts(){
 }
 showPosts();
 
+// Show Loader and fetch more posts
+function showLoading(){
+    // Show loading circles
+    loading.classList.add('show');
 
+    // Hide loading circles
+    setTimeout(() => {
+        loading.classList.remove('show');
 
+        // Fetch more posts
+        setTimeout(() => {
+            // Next page of posts
+            page++
+            showPosts();
+        }, 300);
+
+    }, 1000);
+}
+
+window.addEventListener('scroll', () => {
+    // Document destructuring
+    const {scrollTop, scrollHeight, clientHeight} = document.documentElement;
+        //console.log(scrollTop, scrollHeight, clientHeight)
+    
+
+    if(scrollTop + clientHeight >= scrollHeight - 5){
+        showLoading();
+    }
+});
 
 
 
