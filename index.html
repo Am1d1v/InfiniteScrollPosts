@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Infinite Scroll Posts</title>
+</head>
+<body>
+    
+  <h1>Blog</h1>
+
+  <!-- Text Input -->
+  <div class="filter-container">
+    <input type="text" class="filter" id="filter" placeholder="Filter posts">
+  </div>
+
+   <!-- Posts Container -->
+   <div id="post-container">
+
+    <div class="post">
+        <div class="number">1</div>
+        <div class="post-info">
+            <h2 class="post-title">Post One</h2>
+            <p class="post-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum perspiciatis vero laudantium ullam maxime animi id quia saepe sint quisquam. Ad perspiciatis iure laborum, sunt esse debitis veritatis a rem?
+            </p>
+        </div>
+    </div>
+
+    <div class="post">
+        <div class="number">2</div>
+        <div class="post-info">
+            <h2 class="post-title">Post Two</h2>
+            <p class="post-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum perspiciatis vero laudantium ullam maxime animi id quia saepe sint quisquam. Ad perspiciatis iure laborum, sunt esse debitis veritatis a rem?
+            </p>
+        </div>
+    </div>
+
+   </div>
+
+   <div class="loader">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+   </div>
+   
+
+  <script src="script.js"></script>
+</body>
+</html>
